@@ -1,0 +1,170 @@
+[gd_scene load_steps=33 format=3 uid="uid://drgxlfcupbvw2"]
+
+[ext_resource type="Texture2D" uid="uid://cjb7agrdd1xbr" path="res://Asset/Home.jpg" id="1_s5yxy"]
+[ext_resource type="Texture2D" uid="uid://c26d3biqig6fv" path="res://Asset/pria_001.png" id="2_eik88"]
+[ext_resource type="Texture2D" uid="uid://bgpwo6fbo4nt0" path="res://Asset/start_resized.png" id="3_pnqar"]
+[ext_resource type="Script" uid="uid://dfrl7cnfqfgdr" path="res://script/StartButton.gd" id="4_s5yxy"]
+[ext_resource type="Texture2D" uid="uid://sw1vy5yxlemn" path="res://Asset/loyang_cropped.png" id="5_x4yfu"]
+[ext_resource type="Script" uid="uid://b3e0sdw2yk7co" path="res://script/LoyangButton.gd" id="6_3sxgj"]
+[ext_resource type="Texture2D" uid="uid://v2fgkxvqu52n" path="res://Asset/no_button_resized.png" id="6_764rb"]
+[ext_resource type="Texture2D" uid="uid://d2f2rh7h5wk6p" path="res://Asset/yes_button_resized.png" id="7_aex65"]
+[ext_resource type="Script" uid="uid://bj33x7jhxq4y0" path="res://script/DisapproveButton.gd" id="8_x4yfu"]
+[ext_resource type="Script" uid="uid://mtckp70xcic4" path="res://script/ApproveButton.gd" id="10_764rb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hrl0l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tuai4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ob58h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3hqfm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_08k7p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8cuns"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gjnlk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kxuod"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1dr5g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wosyn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uiejy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3dxm6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lgr22"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trn2v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03owx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wkp8b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_20pc6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5vvyt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c6i3y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c2ibq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4qnp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fpfj3"]
+
+[node name="Main" type="Node2D"]
+
+[node name="HomeSprite" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.8984375, 0.75439626)
+texture = ExtResource("1_s5yxy")
+
+[node name="Character" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(226.99997, 169)
+scale = Vector2(1.0000001, 1)
+texture = ExtResource("2_eik88")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 141.0
+offset_top = 435.0
+offset_right = 349.0
+offset_bottom = 573.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hrl0l")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_tuai4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ob58h")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_3hqfm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_08k7p")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_8cuns")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gjnlk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_kxuod")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1dr5g")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_wosyn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uiejy")
+icon = ExtResource("3_pnqar")
+script = ExtResource("4_s5yxy")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hrl0l")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_tuai4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ob58h")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_3hqfm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_08k7p")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_8cuns")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gjnlk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_kxuod")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1dr5g")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_wosyn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uiejy")
+
+[node name="LoyangButton" type="Button" parent="."]
+visible = false
+offset_left = 684.0
+offset_top = 138.0
+offset_right = 996.0
+offset_bottom = 389.0
+size_flags_stretch_ratio = 0.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3dxm6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_lgr22")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_trn2v")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_03owx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wkp8b")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_20pc6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5vvyt")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c6i3y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_c2ibq")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_j4qnp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fpfj3")
+action_mode = 0
+icon = ExtResource("5_x4yfu")
+script = ExtResource("6_3sxgj")
+
+[node name="DisapproveButton" type="Button" parent="."]
+visible = false
+offset_left = 573.0
+offset_top = 457.0
+offset_right = 799.0
+offset_bottom = 629.0
+size_flags_stretch_ratio = 0.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3dxm6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_lgr22")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_trn2v")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_03owx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wkp8b")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_20pc6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5vvyt")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c6i3y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_c2ibq")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_j4qnp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fpfj3")
+action_mode = 0
+icon = ExtResource("6_764rb")
+script = ExtResource("8_x4yfu")
+
+[node name="ApproveButton" type="Button" parent="."]
+visible = false
+offset_left = 895.0
+offset_top = 456.0
+offset_right = 1121.0
+offset_bottom = 628.0
+size_flags_stretch_ratio = 0.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3dxm6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_lgr22")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_trn2v")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_03owx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wkp8b")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_20pc6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5vvyt")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c6i3y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_c2ibq")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_j4qnp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fpfj3")
+action_mode = 0
+icon = ExtResource("7_aex65")
+script = ExtResource("10_764rb")
+
+[connection signal="gui_input" from="StartButton" to="StartButton" method="_on_gui_input"]
+[connection signal="gui_input" from="LoyangButton" to="LoyangButton" method="_on_gui_input"]
+[connection signal="gui_input" from="DisapproveButton" to="DisapproveButton" method="_on_gui_input"]
+[connection signal="gui_input" from="ApproveButton" to="ApproveButton" method="_on_gui_input"]
