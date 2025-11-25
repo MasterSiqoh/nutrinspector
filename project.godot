@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="Nutrinspector"
-run/main_scene="uid://drgxlfcupbvw2"
+run/main_scene="res://scene/MainMenu.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SaveSystem="*res://script/SaveSystem.gd"
+
+[editor]
+
+version_control/autoload_on_startup=true
 
 [editor_plugins]
 

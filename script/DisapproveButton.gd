@@ -24,6 +24,37 @@ func _ready() -> void:
 		# Default: invisible at start
 		visible = false
 
+func check_day_completion() -> void:
+	# Hide nodes
+	if character:
+		character.visible = false
+	if loyang_button:
+		loyang_button.visible = false
+	if approve_button:
+		approve_button.visible = false
+	self.visible = false
+	
+	# Clear current inspection state
+	get_tree().root.set_meta("game_in_progress", false)
+	get_tree().root.set_meta("food_data", {})
+	get_tree().root.set_meta("game_state", {})
+	
+	var inspections = get_tree().root.get_meta("inspections_today", 0)
+	
+	if inspections >= 3:
+		# Day is complete, go to day summary
+		print("Day complete! Going to summary...")
+		get_tree().change_scene_to_file("res://scene/DaySummary.tscn")
+	else:
+		# Show StartButton for next inspection
+		if start_button:
+			start_button.visible = true
+		
+		# Update UI
+		var main_scene = get_tree().current_scene
+		if main_scene.has_method("update_ui"):
+			main_scene.update_ui()
+
 func _on_pressed() -> void:
 	print("=== DISAPPROVE BUTTON CLICKED ===")
 	
@@ -34,24 +65,17 @@ func _on_pressed() -> void:
 	
 	# Check if boolean is false
 	if food_data["is_correct"] == false:
-		print("Correct! Resetting game...")
+		print("Correct! Food was bad. You earned $20!")
 		
-		# Hide nodes
-		if character:
-			character.visible = false
-		if loyang_button:
-			loyang_button.visible = false
-		if approve_button:
-			approve_button.visible = false
-		self.visible = false
+		# Add money
+		var money = get_tree().root.get_meta("money", 100)
+		get_tree().root.set_meta("money", money + 20)
 		
-		# Show StartButton again
-		if start_button:
-			start_button.visible = true
+		# Increment inspections
+		var inspections = get_tree().root.get_meta("inspections_today", 0)
+		get_tree().root.set_meta("inspections_today", inspections + 1)
 		
-		# Clear game state
-		get_tree().root.set_meta("game_in_progress", false)
-		get_tree().root.set_meta("food_data", {})
-		get_tree().root.set_meta("game_state", {})
+		# Check if day is complete
+		check_day_completion()
 	else:
-		print("Wrong choice! The food was correct.")
+		print("Wrong choice! The food was good. No money earned.")

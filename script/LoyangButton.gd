@@ -3,6 +3,7 @@ extends Button
 var progress_bar
 var is_loading = false
 var load_time = 0.0
+var base_load_time = 3.0
 var total_load_time = 3.0
 
 func _ready() -> void:
@@ -71,6 +72,16 @@ func save_game_state() -> void:
 func _on_pressed() -> void:
 	if not is_loading:
 		print("=== LOYANG BUTTON CLICKED ===")
+		
+		# Check if upgrade is purchased
+		var upgrade_speed = get_tree().root.get_meta("upgrade_speed", false)
+		if upgrade_speed:
+			total_load_time = base_load_time / 2.0  # 2x faster
+			print("Using speed upgrade! Loading in", total_load_time, "seconds")
+		else:
+			total_load_time = base_load_time
+			print("Loading in", total_load_time, "seconds")
+		
 		print("Loading started...")
 		is_loading = true
 		progress_bar.visible = true

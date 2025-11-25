@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://drgxlfcupbvw2"]
+[gd_scene load_steps=35 format=3 uid="uid://drgxlfcupbvw2"]
 
 [ext_resource type="Texture2D" uid="uid://cjb7agrdd1xbr" path="res://Asset/Home.jpg" id="1_s5yxy"]
 [ext_resource type="Texture2D" uid="uid://c26d3biqig6fv" path="res://Asset/pria_001.png" id="2_eik88"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://d2f2rh7h5wk6p" path="res://Asset/yes_button_resized.png" id="7_aex65"]
 [ext_resource type="Script" uid="uid://bj33x7jhxq4y0" path="res://script/DisapproveButton.gd" id="8_x4yfu"]
 [ext_resource type="Script" uid="uid://mtckp70xcic4" path="res://script/ApproveButton.gd" id="10_764rb"]
+[ext_resource type="Script" uid="uid://b62w4x0k63qkv" path="res://script/Main.gd" id="12_main"]
+[ext_resource type="PackedScene" path="res://scene/PauseMenu.tscn" id="13_pause"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hrl0l"]
 
@@ -56,6 +58,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fpfj3"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("12_main")
 
 [node name="HomeSprite" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
@@ -86,17 +89,6 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_wosyn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_uiejy")
 icon = ExtResource("3_pnqar")
 script = ExtResource("4_s5yxy")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_hrl0l")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_tuai4")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_ob58h")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_3hqfm")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_08k7p")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_8cuns")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gjnlk")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_kxuod")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_1dr5g")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_wosyn")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_uiejy")
 
 [node name="LoyangButton" type="Button" parent="."]
 visible = false
@@ -163,6 +155,31 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_fpfj3")
 action_mode = 0
 icon = ExtResource("7_aex65")
 script = ExtResource("10_764rb")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="DayLabel" type="Label" parent="UI"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 43.0
+text = "Day: 1"
+
+[node name="MoneyLabel" type="Label" parent="UI"]
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 120.0
+offset_bottom = 73.0
+text = "Money: $100"
+
+[node name="InspectionsLabel" type="Label" parent="UI"]
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 150.0
+offset_bottom = 103.0
+text = "Inspections: 0/3"
+
+[node name="PauseMenu" parent="." instance=ExtResource("13_pause")]
 
 [connection signal="gui_input" from="StartButton" to="StartButton" method="_on_gui_input"]
 [connection signal="gui_input" from="LoyangButton" to="LoyangButton" method="_on_gui_input"]
