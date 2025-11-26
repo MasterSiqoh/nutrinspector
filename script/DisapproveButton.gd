@@ -38,6 +38,12 @@ func check_day_completion() -> void:
 	get_tree().root.set_meta("game_in_progress", false)
 	get_tree().root.set_meta("food_data", {})
 	get_tree().root.set_meta("game_state", {})
+	get_tree().root.set_meta("inspection_completed", false)
+	
+	# Hide nutrition panel
+	var main_scene = get_tree().current_scene
+	if main_scene and main_scene.has_method("update_nutrition_display"):
+		main_scene.update_nutrition_display()
 	
 	var inspections = get_tree().root.get_meta("inspections_today", 0)
 	
@@ -51,7 +57,6 @@ func check_day_completion() -> void:
 			start_button.visible = true
 		
 		# Update UI
-		var main_scene = get_tree().current_scene
 		if main_scene.has_method("update_ui"):
 			main_scene.update_ui()
 
@@ -70,12 +75,12 @@ func _on_pressed() -> void:
 		# Add money
 		var money = get_tree().root.get_meta("money", 100)
 		get_tree().root.set_meta("money", money + 20)
-		
-		# Increment inspections
-		var inspections = get_tree().root.get_meta("inspections_today", 0)
-		get_tree().root.set_meta("inspections_today", inspections + 1)
-		
-		# Check if day is complete
-		check_day_completion()
 	else:
 		print("Wrong choice! The food was good. No money earned.")
+	
+	# Increment inspections regardless of correctness
+	var inspections = get_tree().root.get_meta("inspections_today", 0)
+	get_tree().root.set_meta("inspections_today", inspections + 1)
+	
+	# Check if day is complete
+	check_day_completion()

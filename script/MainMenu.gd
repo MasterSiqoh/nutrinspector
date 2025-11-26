@@ -68,11 +68,13 @@ func update_save_slots() -> void:
 
 func _on_new_game_pressed() -> void:
 	is_new_game_mode = true
+	$VBoxContainer.visible = false
 	save_select_panel.visible = true
 	update_save_slots()
 
 func _on_load_game_pressed() -> void:
 	is_new_game_mode = false
+	$VBoxContainer.visible = false
 	save_select_panel.visible = true
 	update_save_slots()
 
@@ -98,6 +100,7 @@ func _on_exit_pressed() -> void:
 
 func _on_back_pressed() -> void:
 	save_select_panel.visible = false
+	$VBoxContainer.visible = true
 
 func _on_slot_pressed(slot: int) -> void:
 	if is_new_game_mode:

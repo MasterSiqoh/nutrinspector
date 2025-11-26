@@ -43,12 +43,14 @@ func _process(delta: float) -> void:
 			progress_bar.visible = false
 			load_time = 0.0
 			
-			# Save current state before changing scene
-			save_game_state()
+			# Mark inspection as completed so clipboard can show
+			get_tree().root.set_meta("inspection_completed", true)
 			
-			# Change to FoodInfo scene
-			print("Loading complete! Changing to FoodInfo scene...")
-			get_tree().change_scene_to_file("res://scene/FoodInfo.tscn")
+			# Just show the clipboard nutrition panel, don't change scene
+			print("Loading complete! Nutrition info is now visible on clipboard.")
+			var main_scene = get_tree().current_scene
+			if main_scene and main_scene.has_method("update_nutrition_display"):
+				main_scene.update_nutrition_display()
 
 func save_game_state() -> void:
 	# Get all node references

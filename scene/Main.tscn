@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://drgxlfcupbvw2"]
+[gd_scene load_steps=38 format=3 uid="uid://drgxlfcupbvw2"]
 
 [ext_resource type="Texture2D" uid="uid://cjb7agrdd1xbr" path="res://Asset/Home.jpg" id="1_s5yxy"]
 [ext_resource type="Texture2D" uid="uid://c26d3biqig6fv" path="res://Asset/pria_001.png" id="2_eik88"]
@@ -12,7 +12,9 @@
 [ext_resource type="Script" uid="uid://mtckp70xcic4" path="res://script/ApproveButton.gd" id="10_764rb"]
 [ext_resource type="Script" uid="uid://b62w4x0k63qkv" path="res://script/Main.gd" id="12_main"]
 [ext_resource type="PackedScene" path="res://scene/PauseMenu.tscn" id="13_pause"]
-[ext_resource type="FontFile" path="res://Asset/PixelatedEleganceRegular-ovyAA.ttf" id="14_font"]
+[ext_resource type="FontFile" uid="uid://dv8do4oqry8dm" path="res://Asset/PixelatedEleganceRegular-ovyAA.ttf" id="14_font"]
+[ext_resource type="Texture2D" uid="uid://j7uhu26yktfi" path="res://Asset/clipboard.png" id="15_clipboard"]
+[ext_resource type="Script" uid="uid://dblu5usnnevyi" path="res://script/DraggableClipboard.gd" id="16_draggable"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hrl0l"]
 
@@ -159,6 +161,13 @@ script = ExtResource("10_764rb")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
+[node name="InfoBackground" type="ColorRect" parent="UI"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 170.0
+offset_bottom = 120.0
+color = Color(0.101960786, 0.101960786, 0.14901961, 0)
+
 [node name="DayLabel" type="Label" parent="UI"]
 offset_left = 20.0
 offset_top = 20.0
@@ -185,6 +194,79 @@ offset_bottom = 103.0
 theme_override_fonts/font = ExtResource("14_font")
 theme_override_font_sizes/font_size = 20
 text = "Inspections: 0/3"
+
+[node name="NutritionPanel" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 400.0
+offset_top = 150.0
+offset_right = 750.0
+offset_bottom = 500.0
+mouse_filter = 1
+script = ExtResource("16_draggable")
+
+[node name="ClipboardSprite" type="TextureRect" parent="UI/NutritionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("15_clipboard")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/NutritionPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 135.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="KaloriLabel" type="Label" parent="UI/NutritionPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_font")
+theme_override_font_sizes/font_size = 13
+text = "Kalori: 0 kkal"
+
+[node name="ProteinLabel" type="Label" parent="UI/NutritionPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_font")
+theme_override_font_sizes/font_size = 13
+text = "Protein: 0 g"
+
+[node name="KarbohidratLabel" type="Label" parent="UI/NutritionPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_font")
+theme_override_font_sizes/font_size = 13
+text = "Karbohidrat: 0 g"
+
+[node name="LemakLabel" type="Label" parent="UI/NutritionPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_font")
+theme_override_font_sizes/font_size = 13
+text = "Lemak: 0 g"
+
+[node name="SeratLabel" type="Label" parent="UI/NutritionPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_font")
+theme_override_font_sizes/font_size = 13
+text = "Serat: 0 g"
 
 [node name="PauseMenu" parent="." instance=ExtResource("13_pause")]
 
