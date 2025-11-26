@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://script/UpgradeShop.gd" id="1"]
+[ext_resource type="FontFile" path="res://Asset/PixelatedEleganceRegular-ovyAA.ttf" id="2_font"]
 
 [node name="UpgradeShop" type="Control"]
 layout_mode = 3
@@ -37,11 +38,15 @@ theme_override_constants/separation = 15
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 32
 text = "Upgrade Shop"
 horizontal_alignment = 1
 
 [node name="MoneyLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
 text = "Money: $100"
 horizontal_alignment = 1
 
@@ -55,10 +60,14 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/SpeedUpgrade"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Faster Inspection (2x speed)"
 
 [node name="BuyButton" type="Button" parent="VBoxContainer/SpeedUpgrade"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Buy ($50)"
 
 [node name="Spacer2" type="Control" parent="VBoxContainer"]
@@ -67,4 +76,6 @@ layout_mode = 2
 
 [node name="StartDayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Start Next Day"

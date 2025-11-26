@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://script/DaySummary.gd" id="1"]
+[ext_resource type="FontFile" path="res://Asset/PixelatedEleganceRegular-ovyAA.ttf" id="2_font"]
 
 [node name="DaySummary" type="Control"]
 layout_mode = 3
@@ -37,26 +38,36 @@ theme_override_constants/separation = 15
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 32
 text = "Day Summary"
 horizontal_alignment = 1
 
 [node name="DayLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
 text = "Day: 1"
 horizontal_alignment = 1
 
 [node name="MoneyLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
 text = "Money: $100"
 horizontal_alignment = 1
 
 [node name="ExpenseLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
 text = "Daily Expense: -$20"
 horizontal_alignment = 1
 
 [node name="ResultLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
 text = "Remaining: $80"
 horizontal_alignment = 1
 
@@ -66,6 +77,8 @@ layout_mode = 2
 
 [node name="ContinueButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Continue"
 
 [node name="GameOverPanel" type="Panel" parent="."]
@@ -94,15 +107,21 @@ theme_override_constants/separation = 15
 
 [node name="Title" type="Label" parent="GameOverPanel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 32
 text = "GAME OVER"
 horizontal_alignment = 1
 
 [node name="Message" type="Label" parent="GameOverPanel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
 text = "Not enough money to pay daily expenses!"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="MainMenuButton" type="Button" parent="GameOverPanel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Main Menu"

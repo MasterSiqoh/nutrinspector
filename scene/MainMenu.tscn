@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://script/MainMenu.gd" id="1"]
+[ext_resource type="FontFile" path="res://Asset/PixelatedEleganceRegular-ovyAA.ttf" id="2_font"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -37,6 +38,8 @@ theme_override_constants/separation = 15
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 32
 text = "NUTRINSPECTOR"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -47,18 +50,26 @@ layout_mode = 2
 
 [node name="NewGameButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "New Game"
 
 [node name="LoadGameButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Load Game"
 
 [node name="ContinueButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Continue"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Exit"
 
 [node name="SaveSelectPanel" type="Panel" parent="."]
@@ -87,21 +98,31 @@ theme_override_constants/separation = 10
 
 [node name="Title" type="Label" parent="SaveSelectPanel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
 text = "Select Save Slot"
 horizontal_alignment = 1
 
 [node name="Slot0" type="Button" parent="SaveSelectPanel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
 text = "Slot 1: Empty"
 
 [node name="Slot1" type="Button" parent="SaveSelectPanel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
 text = "Slot 2: Empty"
 
 [node name="Slot2" type="Button" parent="SaveSelectPanel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
 text = "Slot 3: Empty"
 
 [node name="BackButton" type="Button" parent="SaveSelectPanel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
 text = "Back"

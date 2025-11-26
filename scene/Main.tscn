@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://mtckp70xcic4" path="res://script/ApproveButton.gd" id="10_764rb"]
 [ext_resource type="Script" uid="uid://b62w4x0k63qkv" path="res://script/Main.gd" id="12_main"]
 [ext_resource type="PackedScene" path="res://scene/PauseMenu.tscn" id="13_pause"]
+[ext_resource type="FontFile" path="res://Asset/PixelatedEleganceRegular-ovyAA.ttf" id="14_font"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hrl0l"]
 
@@ -163,6 +164,8 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 120.0
 offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("14_font")
+theme_override_font_sizes/font_size = 20
 text = "Day: 1"
 
 [node name="MoneyLabel" type="Label" parent="UI"]
@@ -170,6 +173,8 @@ offset_left = 20.0
 offset_top = 50.0
 offset_right = 120.0
 offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("14_font")
+theme_override_font_sizes/font_size = 20
 text = "Money: $100"
 
 [node name="InspectionsLabel" type="Label" parent="UI"]
@@ -177,6 +182,8 @@ offset_left = 20.0
 offset_top = 80.0
 offset_right = 150.0
 offset_bottom = 103.0
+theme_override_fonts/font = ExtResource("14_font")
+theme_override_font_sizes/font_size = 20
 text = "Inspections: 0/3"
 
 [node name="PauseMenu" parent="." instance=ExtResource("13_pause")]

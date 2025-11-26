@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://script/PauseMenu.gd" id="1"]
+[ext_resource type="FontFile" path="res://Asset/PixelatedEleganceRegular-ovyAA.ttf" id="2_font"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -38,21 +39,31 @@ theme_override_constants/separation = 10
 
 [node name="Title" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 32
 text = "PAUSED"
 horizontal_alignment = 1
 
 [node name="ResumeButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Resume"
 
 [node name="SaveButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Save Game"
 
 [node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Main Menu"
 
 [node name="ExitButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Exit Game"

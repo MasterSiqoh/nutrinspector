@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://6pknoe0qfeur"]
+[gd_scene load_steps=3 format=3 uid="uid://6pknoe0qfeur"]
 
 [ext_resource type="Script" uid="uid://cy56ywc2shx4d" path="res://script/FoodInfo.gd" id="1"]
+[ext_resource type="FontFile" path="res://Asset/PixelatedEleganceRegular-ovyAA.ttf" id="2_font"]
 
 [node name="FoodInfo" type="Control"]
 layout_mode = 3
@@ -36,6 +37,8 @@ grow_vertical = 2
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 28
 text = "FOOD INFORMATION"
 horizontal_alignment = 1
 
@@ -45,22 +48,32 @@ layout_mode = 2
 
 [node name="KaloriLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Kalori: 0"
 
 [node name="ProteinLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Protein: 0"
 
 [node name="KarbohidratLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Karbohidrat: 0"
 
 [node name="LemakLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Lemak: 0"
 
 [node name="SeratLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Serat: 0"
 
 [node name="Spacer2" type="Control" parent="VBoxContainer"]
@@ -69,4 +82,6 @@ layout_mode = 2
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
 text = "Back to Main"
